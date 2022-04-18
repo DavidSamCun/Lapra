@@ -11,8 +11,6 @@ public class Laptop {
     private int refreshRateHz;
     private float price;
 
-
-
     public String getMake() {
         return make;
     }
