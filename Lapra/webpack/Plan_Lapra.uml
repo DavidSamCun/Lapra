@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="45.0" y="-38.0">com</node>
+    <node x="7212.5" y="-38.0">schema</node>
+    <node x="6987.5" y="-38.0">netscape</node>
+    <node x="6653.0" y="-38.0">toolbarButtonGraphics</node>
+    <node x="6468.5" y="-38.0">sun</node>
+    <node x="6247.5" y="-38.0">liquibase</node>
+    <node x="6001.5" y="-38.0">win32-x86</node>
+    <node x="5718.5" y="-38.0">groovyjarjarasm</node>
+    <node x="5527.0" y="-38.0">java</node>
+    <node x="5343.0" y="-38.0">javax</node>
+    <node x="5050.0" y="-38.0">groovyjarjarpicocli</node>
+    <node x="4870.0" y="-38.0">net</node>
+    <node x="4645.0" y="-38.0">OSGI-INF</node>
+    <node x="4466.0" y="-38.0">tech</node>
+    <node x="4254.0" y="-38.0">images</node>
+    <node x="4065.5" y="-38.0">junit</node>
+    <node x="3888.5" y="-38.0">org</node>
+    <node x="3713.5" y="-38.0">ch</node>
+    <node x="3535.0" y="-38.0">io</node>
+    <node x="3303.5" y="-38.0">templates</node>
+    <node x="3105.0" y="-38.0">antlr</node>
+    <node x="2936.0" y="-38.0">aj</node>
+    <node x="2734.0" y="-38.0">google</node>
+    <node x="2426.5" y="-38.0">mysql-default-conf</node>
+    <node x="2245.5" y="-38.0">i18n</node>
+    <node x="2070.5" y="-38.0">jdk</node>
+    <node x="1842.5" y="-38.0">META-INF</node>
+    <node x="1634.0" y="-38.0">groovy</node>
+    <node x="1287.0" y="-38.0">groovyjarjarcommonscli</node>
+    <node x="1077.5" y="-38.0">config</node>
+    <node x="797.5" y="-38.0">groovyjarjarantlr</node>
+    <node x="528.0" y="-38.0">win32-x86-64</node>
+    <node x="225.0" y="-38.0">mockito-extensions</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="0.18362080673638462" showDependencies="false" x="3716.5" y="-20.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
