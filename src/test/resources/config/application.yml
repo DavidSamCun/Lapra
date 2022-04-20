@@ -13,12 +13,22 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+  client:
+    enabled: false
+  instance:
+    appname: Lapra
+    instanceId: Lapra:${spring.application.instance-id:${random.value}}
+
 spring:
   profiles:
     # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
     #active: testcontainers
   application:
     name: Lapra
+  cloud:
+    config:
+      enabled: false
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -100,7 +110,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: MzUzYjEwMDE2NDlmM2RhMzI3ODJjNDAwODEwN2EwNjUxNmQ5MGEwNDgwYTA5MDgzYmRiYTEyNmY0ZWZhZGJjNDgxZDk1MGJlOWM3YjBhNDA5ZjBjZWUzMGFhYTljYzdmOGY2OWY0MmUxZjMwMmZkMzRiZGZlMjg4OTMxOWZjYTA=
+        base64-secret: NGI1ODg5NTg0ZjIwMDAzN2JmMThiMzFjZTg3N2FkYzA1ODk0M2JjZmM3OGQ5ZTdjMGUzYzlhYzRhNTdmZGYyOGVhMmNlYzI0ODI0Mjg2ZWQ1MWFiYzM0NGI2ZDZiMzFmOWY4NmZjYmE4NjQxMDA1YmYwYzQxYzc3Yzg2ODViYzU=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
 # ===================================================================
