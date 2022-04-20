@@ -1,0 +1,39 @@
+DEFAULT_MIN_LENGTH = 4
+DEFAULT_MAX_LENGTH = 30
+
+
+
+entity Questionnaire {
+	answer1UsedAt String
+    answer2Type String
+    answer3Size Integer
+    answer4Function String
+    answer5Price Integer
+}
+
+entity Laptop {
+  brandName String required maxlength(DEFAULT_MAX_LENGTH)
+  modelName String  required maxlength(DEFAULT_MAX_LENGTH)
+  screenSize Float
+  memory Integer
+  storage Integer
+  screenBrightness Integer
+  screenRefreshHz Integer
+  price Float
+}
+
+relationship ManyToOne{
+	Questionnaire{model(modelName)} to Laptop
+
+}
+
+relationship ManyToOne {
+  Questionnaire{assignedTo(login)} to User
+}
+
+
+filter Laptop, Questionnaire
+
+paginate Laptop, Questionnaire with pagination
+
+service all with serviceImpl

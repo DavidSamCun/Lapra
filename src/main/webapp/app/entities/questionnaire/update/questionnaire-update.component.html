@@ -1,0 +1,118 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-questionnaire-heading" data-cy="QuestionnaireCreateUpdateHeading">Create or edit a Questionnaire</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_answer1UsedAt">Answer 1 Used At</label>
+          <input
+            type="text"
+            class="form-control"
+            name="answer1UsedAt"
+            id="field_answer1UsedAt"
+            data-cy="answer1UsedAt"
+            formControlName="answer1UsedAt"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_answer2Type">Answer 2 Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="answer2Type"
+            id="field_answer2Type"
+            data-cy="answer2Type"
+            formControlName="answer2Type"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_answer3Size">Answer 3 Size</label>
+          <input
+            type="number"
+            class="form-control"
+            name="answer3Size"
+            id="field_answer3Size"
+            data-cy="answer3Size"
+            formControlName="answer3Size"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_answer4Function">Answer 4 Function</label>
+          <input
+            type="text"
+            class="form-control"
+            name="answer4Function"
+            id="field_answer4Function"
+            data-cy="answer4Function"
+            formControlName="answer4Function"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_answer5Price">Answer 5 Price</label>
+          <input
+            type="number"
+            class="form-control"
+            name="answer5Price"
+            id="field_answer5Price"
+            data-cy="answer5Price"
+            formControlName="answer5Price"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_model">Model</label>
+          <select class="form-control" id="field_model" data-cy="model" name="model" formControlName="model">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="laptopOption.id === editForm.get('model')!.value?.id ? editForm.get('model')!.value : laptopOption"
+              *ngFor="let laptopOption of laptopsSharedCollection; trackBy: trackLaptopById"
+            >
+              {{ laptopOption.modelName }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_assignedTo">Assigned To</label>
+          <select class="form-control" id="field_assignedTo" data-cy="assignedTo" name="assignedTo" formControlName="assignedTo">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="userOption.id === editForm.get('assignedTo')!.value?.id ? editForm.get('assignedTo')!.value : userOption"
+              *ngFor="let userOption of usersSharedCollection; trackBy: trackUserById"
+            >
+              {{ userOption.login }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

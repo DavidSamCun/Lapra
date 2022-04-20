@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220420145622",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "questionnaire",
+  "fields": [
+    {
+      "fieldName": "answer1UsedAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "answer2Type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "answer3Size",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "answer4Function",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "answer5Price",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Questionnaire",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "modelName",
+      "otherEntityName": "laptop",
+      "otherEntityRelationshipName": "questionnaire",
+      "relationshipName": "model",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "questionnaire",
+      "relationshipName": "assignedTo",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

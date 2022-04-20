@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="laptop">
+      <h2 data-cy="laptopDetailsHeading"><span>Laptop</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ laptop.id }}</span>
+        </dd>
+        <dt><span>Brand Name</span></dt>
+        <dd>
+          <span>{{ laptop.brandName }}</span>
+        </dd>
+        <dt><span>Model Name</span></dt>
+        <dd>
+          <span>{{ laptop.modelName }}</span>
+        </dd>
+        <dt><span>Screen Size</span></dt>
+        <dd>
+          <span>{{ laptop.screenSize }}</span>
+        </dd>
+        <dt><span>Memory</span></dt>
+        <dd>
+          <span>{{ laptop.memory }}</span>
+        </dd>
+        <dt><span>Storage</span></dt>
+        <dd>
+          <span>{{ laptop.storage }}</span>
+        </dd>
+        <dt><span>Screen Brightness</span></dt>
+        <dd>
+          <span>{{ laptop.screenBrightness }}</span>
+        </dd>
+        <dt><span>Screen Refresh Hz</span></dt>
+        <dd>
+          <span>{{ laptop.screenRefreshHz }}</span>
+        </dd>
+        <dt><span>Price</span></dt>
+        <dd>
+          <span>{{ laptop.price }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/laptop', laptop.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

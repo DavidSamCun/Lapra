@@ -1,0 +1,105 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-laptop-heading" data-cy="LaptopCreateUpdateHeading">Create or edit a Laptop</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_brandName">Brand Name</label>
+          <input type="text" class="form-control" name="brandName" id="field_brandName" data-cy="brandName" formControlName="brandName" />
+          <div *ngIf="editForm.get('brandName')!.invalid && (editForm.get('brandName')!.dirty || editForm.get('brandName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('brandName')?.errors?.required"> This field is required. </small>
+            <small class="form-text text-danger" *ngIf="editForm.get('brandName')?.errors?.maxlength">
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_modelName">Model Name</label>
+          <input type="text" class="form-control" name="modelName" id="field_modelName" data-cy="modelName" formControlName="modelName" />
+          <div *ngIf="editForm.get('modelName')!.invalid && (editForm.get('modelName')!.dirty || editForm.get('modelName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('modelName')?.errors?.required"> This field is required. </small>
+            <small class="form-text text-danger" *ngIf="editForm.get('modelName')?.errors?.maxlength">
+              This field cannot be longer than 30 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_screenSize">Screen Size</label>
+          <input
+            type="number"
+            class="form-control"
+            name="screenSize"
+            id="field_screenSize"
+            data-cy="screenSize"
+            formControlName="screenSize"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_memory">Memory</label>
+          <input type="number" class="form-control" name="memory" id="field_memory" data-cy="memory" formControlName="memory" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_storage">Storage</label>
+          <input type="number" class="form-control" name="storage" id="field_storage" data-cy="storage" formControlName="storage" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_screenBrightness">Screen Brightness</label>
+          <input
+            type="number"
+            class="form-control"
+            name="screenBrightness"
+            id="field_screenBrightness"
+            data-cy="screenBrightness"
+            formControlName="screenBrightness"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_screenRefreshHz">Screen Refresh Hz</label>
+          <input
+            type="number"
+            class="form-control"
+            name="screenRefreshHz"
+            id="field_screenRefreshHz"
+            data-cy="screenRefreshHz"
+            formControlName="screenRefreshHz"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_price">Price</label>
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

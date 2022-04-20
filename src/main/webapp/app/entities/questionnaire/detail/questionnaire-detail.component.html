@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="questionnaire">
+      <h2 data-cy="questionnaireDetailsHeading"><span>Questionnaire</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ questionnaire.id }}</span>
+        </dd>
+        <dt><span>Answer 1 Used At</span></dt>
+        <dd>
+          <span>{{ questionnaire.answer1UsedAt }}</span>
+        </dd>
+        <dt><span>Answer 2 Type</span></dt>
+        <dd>
+          <span>{{ questionnaire.answer2Type }}</span>
+        </dd>
+        <dt><span>Answer 3 Size</span></dt>
+        <dd>
+          <span>{{ questionnaire.answer3Size }}</span>
+        </dd>
+        <dt><span>Answer 4 Function</span></dt>
+        <dd>
+          <span>{{ questionnaire.answer4Function }}</span>
+        </dd>
+        <dt><span>Answer 5 Price</span></dt>
+        <dd>
+          <span>{{ questionnaire.answer5Price }}</span>
+        </dd>
+        <dt><span>Model</span></dt>
+        <dd>
+          <div *ngIf="questionnaire.model">
+            <a [routerLink]="['/laptop', questionnaire.model?.id, 'view']">{{ questionnaire.model?.modelName }}</a>
+          </div>
+        </dd>
+        <dt><span>Assigned To</span></dt>
+        <dd>
+          <span>{{ questionnaire.assignedTo?.login }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/questionnaire', questionnaire.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

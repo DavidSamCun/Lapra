@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20220420145623",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "laptop",
+  "fields": [
+    {
+      "fieldName": "brandName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "modelName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "30"
+    },
+    {
+      "fieldName": "screenSize",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "memory",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "storage",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "screenBrightness",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "screenRefreshHz",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Laptop",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
