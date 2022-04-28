@@ -48,6 +48,7 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
+    #jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     url: jdbc:h2:file:./target/h2db/db/lapra;DB_CLOSE_DELAY=-1
     username: Lapra
     password:

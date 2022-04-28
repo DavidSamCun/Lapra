@@ -995,11 +995,11 @@
                             <configuration>
                                 <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                                 <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                                <driver>org.h2.Driver</driver>
-                                <url>jdbc:h2:file:${project.build.directory}/h2db/db/lapra</url>
+                                <driver>com.mysql.cj.jdbc.Driver</driver>
+                                <url>jdbc:mysql://localhost:3306/lapra</url>
                                 <defaultSchemaName></defaultSchemaName>
-                                <username>Lapra</username>
-                                <password></password>
+                                <username>master</username>
+                                <password>admin</password>
                                 <referenceUrl>hibernate:spring:com.mycompany.myapp.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
                                 <logging>debug</logging>
