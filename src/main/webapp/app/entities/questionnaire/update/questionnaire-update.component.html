@@ -11,56 +11,60 @@
           <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
         </div>
 
+
+        <label class= "form-label" for="field_answer1UsedAt">Where is this used at?</label>
+        <select type ="text" class = "form-control" id='field_answer1UsedAt' name='answer1UsedAt' data-cy="answer1UsedAt" formControlName="answer1UsedAt" [(ngModel)]="answer1Select">
+          <option *ngFor="let item of answer1Options" [ngValue]="item.answer">
+            {{item.answer}}
+          </option>
+
+        </select>
+
+      </div>
+
+      <div class="row mb-3">
+
+        <label class= "form-label" for="field_answer2Type">What kind of laptop are you thinking?</label>
+        <select id='field_answer2Type' name='answer2Type' formControlName="answer2Type" [(ngModel)]="answer2Select">
+          <option *ngFor="let item of answer2Options" [value]="item.answer">
+            {{item.answer}}
+          </option>
+        </select>
+
         <div class="row mb-3">
-          <label class="form-label" for="field_answer1UsedAt">Answer 1 Used At</label>
-          <input
-            type="text"
-            class="form-control"
-            name="answer1UsedAt"
-            id="field_answer1UsedAt"
-            data-cy="answer1UsedAt"
-            formControlName="answer1UsedAt"
-          />
+
+          <label class= "form-label" for="field_answer3Size">How big do you want it?</label>
+          <select class="form-control" id='field_answer3Size' name='answer3Size' formControlName="answer3Size" [(ngModel)]="answer3Select">
+            <option *ngFor="let item of answer3Options" [value]="item.size">
+              {{item.size}}
+            </option>
+          </select>
+        </div>
+
+<!--        <div class="row mb-3">-->
+<!--          <label class="form-label" for="field_answer3Size">Answer 3 Size</label>-->
+<!--          <input-->
+<!--            type="number"-->
+<!--            class="form-control"-->
+<!--            name="answer3Size"-->
+<!--            id="field_answer3Size"-->
+<!--            data-cy="answer3Size"-->
+<!--            formControlName="answer3Size"-->
+<!--          />-->
+<!--        </div>-->
+
+        <div class="row mb-3">
+
+          <label class="form-label" for="field_answer4Function">What is it mostly used for?</label>
+          <select id='field_answer4Function' name='answer4Function' formControlName="answer4Function" [(ngModel)]="answer4Select">
+            <option *ngFor="let item of answer4Options" [value]="item.answer">
+              {{item.answer}}
+            </option>
+          </select>
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" for="field_answer2Type">Answer 2 Type</label>
-          <input
-            type="text"
-            class="form-control"
-            name="answer2Type"
-            id="field_answer2Type"
-            data-cy="answer2Type"
-            formControlName="answer2Type"
-          />
-        </div>
-
-        <div class="row mb-3">
-          <label class="form-label" for="field_answer3Size">Answer 3 Size</label>
-          <input
-            type="number"
-            class="form-control"
-            name="answer3Size"
-            id="field_answer3Size"
-            data-cy="answer3Size"
-            formControlName="answer3Size"
-          />
-        </div>
-
-        <div class="row mb-3">
-          <label class="form-label" for="field_answer4Function">Answer 4 Function</label>
-          <input
-            type="text"
-            class="form-control"
-            name="answer4Function"
-            id="field_answer4Function"
-            data-cy="answer4Function"
-            formControlName="answer4Function"
-          />
-        </div>
-
-        <div class="row mb-3">
-          <label class="form-label" for="field_answer5Price">Answer 5 Price</label>
+          <label class="form-label" for="field_answer5Price">What's the max you want to drop?</label>
           <input
             type="number"
             class="form-control"

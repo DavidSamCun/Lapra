@@ -33,6 +33,101 @@ export class QuestionnaireUpdateComponent implements OnInit {
     assignedTo: [],
   });
 
+answer1Select:any
+  answer1Options = [
+
+    {
+      answer: "Business"
+    },
+    {
+      answer: "Student"
+    },
+    {
+      answer: "Personal"
+    },
+    {
+      answer: "I got Money, Gimme dat Mac"
+    }
+  ]
+
+  answer2Select:any
+  answer2Options = [
+    {
+      answer: "Desktop Replacement (Plugged in Mostly)"
+    },
+    {
+      answer: "2 in 1 Tablet/Laptop"
+    },
+    {
+      answer: "Laptop with Good Battery Life"
+    }
+
+  ]
+
+  answer3Select:any
+  answer3Options = [
+
+    {
+      answer: "14\" or smaller",
+      size: 14
+    },
+    {
+      answer: "15.6\"",
+      size: 15.6
+    },
+    {
+      answer: "16\"+",
+      size: 16
+    },
+    {
+      answer: "No Preference",
+      size: 20
+    }
+
+  ]
+
+  answer4Select:any
+  answer4Options = [
+
+    {
+      answer: "Web Surfing",
+    },
+    {
+      answer: "Video Streaming",
+    },
+    {
+      answer: "Document Editing",
+    },
+    {
+      answer: "Web Development",
+    },
+    {
+      answer: "App Development",
+    },
+    {
+      answer: "iOS/MacOS Development",
+    },
+    {
+      answer: "Photo Editing",
+    },
+    {
+      answer: "Video Editing",
+    },
+    {
+      answer: "Virtual Machines",
+    },
+    {
+      answer: "Casual Gaming",
+    },
+    {
+      answer: "Heavy Gaming",
+    },
+    {
+      answer: "Virtual Reality (VR)",
+    }
+
+  ]
+
   constructor(
     protected questionnaireService: QuestionnaireService,
     protected laptopService: LaptopService,
