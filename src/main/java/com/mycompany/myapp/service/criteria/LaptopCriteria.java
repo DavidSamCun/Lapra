@@ -36,7 +36,7 @@ public class LaptopCriteria implements Serializable, Criteria {
 
     private IntegerFilter memory;
 
-    private IntegerFilter storage;
+    private FloatFilter storage;
 
     private IntegerFilter screenBrightness;
 
@@ -141,18 +141,18 @@ public class LaptopCriteria implements Serializable, Criteria {
         this.memory = memory;
     }
 
-    public IntegerFilter getStorage() {
+    public FloatFilter getStorage() {
         return storage;
     }
 
-    public IntegerFilter storage() {
+    public FloatFilter storage() {
         if (storage == null) {
-            storage = new IntegerFilter();
+            storage = new FloatFilter();
         }
         return storage;
     }
 
-    public void setStorage(IntegerFilter storage) {
+    public void setStorage(FloatFilter storage) {
         this.storage = storage;
     }
 

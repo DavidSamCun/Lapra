@@ -38,7 +38,7 @@ public class Laptop implements Serializable {
     private Integer memory;
 
     @Column(name = "storage")
-    private Integer storage;
+    private Float storage;
 
     @Column(name = "screen_brightness")
     private Integer screenBrightness;
@@ -116,16 +116,16 @@ public class Laptop implements Serializable {
         this.memory = memory;
     }
 
-    public Integer getStorage() {
+    public Float getStorage() {
         return this.storage;
     }
 
-    public Laptop storage(Integer storage) {
+    public Laptop storage(Float storage) {
         this.setStorage(storage);
         return this;
     }
 
-    public void setStorage(Integer storage) {
+    public void setStorage(Float storage) {
         this.storage = storage;
     }
 

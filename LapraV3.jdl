@@ -16,7 +16,7 @@ entity Laptop {
   modelName String  required maxlength(DEFAULT_MAX_LENGTH)
   screenSize Float
   memory Integer
-  storage Integer
+  storage Float
   screenBrightness Integer
   screenRefreshHz Integer
   price Float

@@ -44,9 +44,9 @@ class LaptopResourceIT {
     private static final Integer UPDATED_MEMORY = 2;
     private static final Integer SMALLER_MEMORY = 1 - 1;
 
-    private static final Integer DEFAULT_STORAGE = 1;
-    private static final Integer UPDATED_STORAGE = 2;
-    private static final Integer SMALLER_STORAGE = 1 - 1;
+    private static final Float DEFAULT_STORAGE = 1F;
+    private static final Float UPDATED_STORAGE = 2F;
+    private static final Float SMALLER_STORAGE = 1F - 1F;
 
     private static final Integer DEFAULT_SCREEN_BRIGHTNESS = 1;
     private static final Integer UPDATED_SCREEN_BRIGHTNESS = 2;
@@ -211,7 +211,7 @@ class LaptopResourceIT {
             .andExpect(jsonPath("$.[*].modelName").value(hasItem(DEFAULT_MODEL_NAME)))
             .andExpect(jsonPath("$.[*].screenSize").value(hasItem(DEFAULT_SCREEN_SIZE.doubleValue())))
             .andExpect(jsonPath("$.[*].memory").value(hasItem(DEFAULT_MEMORY)))
-            .andExpect(jsonPath("$.[*].storage").value(hasItem(DEFAULT_STORAGE)))
+            .andExpect(jsonPath("$.[*].storage").value(hasItem(DEFAULT_STORAGE.doubleValue())))
             .andExpect(jsonPath("$.[*].screenBrightness").value(hasItem(DEFAULT_SCREEN_BRIGHTNESS)))
             .andExpect(jsonPath("$.[*].screenRefreshHz").value(hasItem(DEFAULT_SCREEN_REFRESH_HZ)))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())));
@@ -233,7 +233,7 @@ class LaptopResourceIT {
             .andExpect(jsonPath("$.modelName").value(DEFAULT_MODEL_NAME))
             .andExpect(jsonPath("$.screenSize").value(DEFAULT_SCREEN_SIZE.doubleValue()))
             .andExpect(jsonPath("$.memory").value(DEFAULT_MEMORY))
-            .andExpect(jsonPath("$.storage").value(DEFAULT_STORAGE))
+            .andExpect(jsonPath("$.storage").value(DEFAULT_STORAGE.doubleValue()))
             .andExpect(jsonPath("$.screenBrightness").value(DEFAULT_SCREEN_BRIGHTNESS))
             .andExpect(jsonPath("$.screenRefreshHz").value(DEFAULT_SCREEN_REFRESH_HZ))
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.doubleValue()));
@@ -1050,7 +1050,7 @@ class LaptopResourceIT {
             .andExpect(jsonPath("$.[*].modelName").value(hasItem(DEFAULT_MODEL_NAME)))
             .andExpect(jsonPath("$.[*].screenSize").value(hasItem(DEFAULT_SCREEN_SIZE.doubleValue())))
             .andExpect(jsonPath("$.[*].memory").value(hasItem(DEFAULT_MEMORY)))
-            .andExpect(jsonPath("$.[*].storage").value(hasItem(DEFAULT_STORAGE)))
+            .andExpect(jsonPath("$.[*].storage").value(hasItem(DEFAULT_STORAGE.doubleValue())))
             .andExpect(jsonPath("$.[*].screenBrightness").value(hasItem(DEFAULT_SCREEN_BRIGHTNESS)))
             .andExpect(jsonPath("$.[*].screenRefreshHz").value(hasItem(DEFAULT_SCREEN_REFRESH_HZ)))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())));

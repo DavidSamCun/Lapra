@@ -27,7 +27,7 @@
     },
     {
       "fieldName": "storage",
-      "fieldType": "Integer"
+      "fieldType": "Float"
     },
     {
       "fieldName": "screenBrightness",
